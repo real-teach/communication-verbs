@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Communication Verbs — B1</title>
+
+<style>
+:root {
+  --green: #477b62;
+  --light: #eaf4ed;
+  --mint: #d5eadb;
+  --dark: #294b3b;
+  --pink: #f8e6e5;
+  --correct: #d8f0df;
+  --wrong: #f9dddd;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f7f2;
+  color: #304638;
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(135deg, #d8ebdc, #eff6e9);
+  padding: 38px 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  color: var(--dark);
+  font-size: 32px;
+}
+
+header p { color: #5d7765; }
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px;
+  background: #ffffffed;
+  box-shadow: 0 3px 10px #294b3b12;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--dark);
+  background: var(--light);
+  padding: 9px 13px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+nav a:hover { background: var(--mint); }
+
+.container {
+  max-width: 950px;
+  margin: 25px auto;
+  padding: 0 16px;
+}
+
+.intro, .exercise, .vocab {
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 16px #294b3b0c;
+}
+
+h2 { color: var(--green); margin-top: 0; }
+h3 { color: var(--dark); }
+
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.vocab-item {
+  background: var(--light);
+  padding: 11px 14px;
+  border-radius: 10px;
+}
+
+.vocab-item strong { color: var(--green); }
+
+.question {
+  background: #f8faf7;
+  padding: 14px;
+  border-radius: 12px;
+  margin: 13px 0;
+  border: 1px solid #e4ece3;
+}
+
+.question p { margin: 0 0 10px; }
+
+.options label {
+  display: block;
+  padding: 5px 8px;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+.options label:hover { background: var(--light); }
+
+input[type="radio"] { accent-color: var(--green); }
+
+input[type="text"], select, textarea {
+  border: 1px solid #bdcfc0;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 15px;
+  font-family: inherit;
+  max-width: 100%;
+}
+
+input[type="text"] { width: 100%; }
+
+textarea {
+  width: 100%;
+  min-height: 65px;
+  resize: vertical;
+}
+
+button {
+  border: none;
+  background: var(--green);
+  color: white;
+  padding: 11px 20px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 8px 5px 5px 0;
+}
+
+button:hover { background: #315b45; }
+
+.secondary { background: #91ad96; }
+
+.feedback {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.correct {
+  background: var(--correct) !important;
+  border-color: #80b78d !important;
+}
+
+.incorrect {
+  background: var(--wrong) !important;
+  border-color: #d99b9b !important;
+}
+
+.score {
+  background: var(--light);
+  border-radius: 12px;
+  padding: 15px;
+  margin-top: 15px;
+  font-weight: bold;
+  color: var(--dark);
+}
+
+.translation-item {
+  margin: 18px 0;
+  padding: 15px;
+  background: #f8faf7;
+  border-radius: 12px;
+}
+
+.answer-key {
+  display: none;
+  margin-top: 10px;
+  padding: 12px;
+  background: var(--correct);
+  border-radius: 8px;
+  color: var(--dark);
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #718476;
+}
+
+@media(max-width: 600px) {
+  header h1 { font-size: 25px; }
+  .vocab-grid { grid-template-columns: 1fr; }
+  .intro, .exercise, .vocab { padding: 17px; }
+  nav a { font-size: 11px; padding: 8px 10px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>💬 Communication Verbs</h1>
+  <p>15 Essential Verbs · B1 English Practice</p>
+  <p>Apologising · Complaining · Encouraging · Persuading · Informing</p>
+</header>
+
+<nav>
+  <a href="#vocabulary">Vocabulary</a>
+  <a href="#task1">Exercise 1</a>
+  <a href="#task2">Exercise 2</a>
+  <a href="#task3">Exercise 3</a>
+  <a href="#task4">Exercise 4</a>
+  <a href="#task5">Exercise 5</a>
+</nav>
+
+<div class="container">
+
+<!-- VOCABULARY -->
+
+<section class="vocab" id="vocabulary">
+<h2>🌿 Vocabulary Bank</h2>
+
+<div class="vocab-grid">
+  <div class="vocab-item"><strong>apologise</strong> — извиняться</div>
+  <div class="vocab-item"><strong>challenge</strong> — бросать вызов</div>
+  <div class="vocab-item"><strong>comfort</strong> — утешать</div>
+  <div class="vocab-item"><strong>complain</strong> — жаловаться</div>
+  <div class="vocab-item"><strong>describe</strong> — описывать</div>
+  <div class="vocab-item"><strong>encourage</strong> — поощрять, поддерживать</div>
+  <div class="vocab-item"><strong>enquire</strong> — узнавать, наводить справки</div>
+  <div class="vocab-item"><strong>entertain</strong> — развлекать</div>
+  <div class="vocab-item"><strong>inform</strong> — информировать, сообщать</div>
+  <div class="vocab-item"><strong>persuade</strong> — убеждать</div>
+  <div class="vocab-item"><strong>recommend</strong> — рекомендовать</div>
+  <div class="vocab-item"><strong>tell a story</strong> — рассказывать историю</div>
+  <div class="vocab-item"><strong>thank</strong> — благодарить</div>
+  <div class="vocab-item"><strong>warn</strong> — предупреждать</div>
+  <div class="vocab-item"><strong>welcome</strong> — приветствовать, встречать</div>
+</div>
+
+<p><strong>Useful patterns:</strong></p>
+<ul>
+  <li>apologise <strong>for</strong> doing something</li>
+  <li>complain <strong>about</strong> something</li>
+  <li>enquire <strong>about</strong> something</li>
+  <li>persuade somebody <strong>to do</strong> something</li>
+  <li>encourage somebody <strong>to do</strong> something</li>
+  <li>thank somebody <strong>for</strong> something</li>
+  <li>warn somebody <strong>about</strong> something / warn somebody <strong>not to do</strong> something</li>
+  <li>recommend <strong>doing</strong> something</li>
+</ul>
+</section>
+
+<!-- EXERCISE 1 -->
+
+<section class="exercise" id="task1">
+<h2>✏️ Exercise 1. Match the verbs with their definitions</h2>
+<p>Choose the correct verb for each definition.</p>
+
+<div id="match">
+
+<div class="question" data-answer="apologise">
+  <p>1. To say that you are sorry for doing something wrong.</p>
+  <select>
+    <option value="">Choose a verb</option>
+    <option>comfort</option><option>apologise</option>
+    <option>entertain</option><option>warn</option>
+  </select>
+</div>
+
+<div class="question" data-answer="persuade">
+  <p>2. To make someone agree to do something by giving reasons.</p>
+  <select>
+    <option value="">Choose a verb</option>
+    <option>persuade</option><option>describe</option>
+    <option>thank</option><option>complain</option>
+  </select>
+</div>
+
+<div class="question" data-answer="comfort">
+  <p>3. To make someone feel better when they are sad or worried.</p>
+  <select>
+    <option value="">Choose a verb</option>
+    <option>challenge</option><option>comfort</option>
+    <option>inform</option><option>recommend</option>
+  </select>
+</div>
+
+<div class="question" data-answer="enquire">
+  <p>4. To ask for information about something.</p>
+  <select>
+    <option value="">Choose a verb</option>
+    <option>enquire</option><option>welcome</option>
+    <option>encourage</option><option>entertain</option>
+  </select>
+</div>
+
+<div class="question" data-answer="entertain">
+  <p>5. To amuse people and make them enjoy themselves.</p>
+  <select>
+    <option value="">Choose a verb</option>
+    <option>inform</option><option>entertain</option>
+    <option>apologise</option><option>describe</option>
+  </select>
+</div>
+
+<div class="question" data-answer="warn">
+  <p>6. To tell someone about a possible danger or problem.</p>
+  <select>
+    <option value="">Choose a verb</option>
+    <option>thank</option><option>warn</option>
+    <option>comfort</option><option>challenge</option>
+  </select>
+</div>
+
+<div class="question" data-answer="recommend">
+  <p>7. To suggest that something is good or suitable.</p>
+  <select>
+    <option value="">Choose a verb</option>
+    <option>complain</option><option>recommend</option>
+    <option>persuade</option><option>welcome</option>
+  </select>
+</div>
+
+<div class="question" data-answer="inform">
+  <p>8. To officially or formally give someone information.</p>
+  <select>
+    <option value="">Choose a verb</option>
+    <option>inform</option><option>tell a story</option>
+    <option>challenge</option><option>thank</option>
+  </select>
+</div>
+
+<div class="question" data-answer="encourage">
+  <p>9. To give someone confidence or support to do something.</p>
+  <select>
+    <option value="">Choose a verb</option>
+    <option>encourage</option><option>complain</option>
+    <option>apologise</option><option>enquire</option>
+  </select>
+</div>
+
+<div class="question" data-answer="describe">
+  <p>10. To say what someone or something is like.</p>
+  <select>
+    <option value="">Choose a verb</option>
+    <option>welcome</option><option>describe</option>
+    <option>comfort</option><option>entertain</option>
+  </select>
+</div>
+
+</div>
+
+<button onclick="checkSelects('match','score1')">Check answers</button>
+<button class="secondary" onclick="resetSelects('match','score1')">Reset</button>
+<div class="score" id="score1">Your score: — / 10</div>
+</section>
+
+<!-- EXERCISE 2 -->
+
+<section class="exercise" id="task2">
+<h2>🌱 Exercise 2. Choose the correct verb</h2>
+<p>Choose the best verb to complete each sentence. Use the correct form where necessary.</p>
+
+<div id="choose">
+
+<div class="question" data-answer="complained">
+<p>1. The customers _____ about the slow service at the restaurant.</p>
+<div class="options">
+<label><input type="radio" name="c1" value="complained"> complained</label>
+<label><input type="radio" name="c1" value="comforted"> comforted</label>
+<label><input type="radio" name="c1" value="welcomed"> welcomed</label>
+</div>
+</div>
+
+<div class="question" data-answer="persuade">
+<p>2. I managed to _____ my brother to come to the party.</p>
+<div class="options">
+<label><input type="radio" name="c2" value="describe"> describe</label>
+<label><input type="radio" name="c2" value="persuade"> persuade</label>
+<label><input type="radio" name="c2" value="warn"> warn</label>
+</div>
+</div>
+
+<div class="question" data-answer="warned">
+<p>3. The teacher _____ us not to be late for the exam.</p>
+<div class="options">
+<label><input type="radio" name="c3" value="thanked"> thanked</label>
+<label><input type="radio" name="c3" value="warned"> warned</label>
+<label><input type="radio" name="c3" value="entertained"> entertained</label>
+</div>
+</div>
+
+<div class="question" data-answer="comforted">
+<p>4. She _____ her friend after he received some bad news.</p>
+<div class="options">
+<label><input type="radio" name="c4" value="challenged"> challenged</label>
+<label><input type="radio" name="c4" value="comforted"> comforted</label>
+<label><input type="radio" name="c4" value="informed"> informed</label>
+</div>
+</div>
+
+<div class="question" data-answer="recommend">
+<p>5. Can you _____ a good book for my holiday?</p>
+<div class="options">
+<label><input type="radio" name="c5" value="recommend"> recommend</label>
+<label><input type="radio" name="c5" value="apologise"> apologise</label>
+<label><input type="radio" name="c5" value="welcome"> welcome</label>
+</div>
+</div>
+
+<div class="question" data-answer="enquired">
+<p>6. We _____ about the price of the tickets before buying them.</p>
+<div class="options">
+<label><input type="radio" name="c6" value="entertained"> entertained</label>
+<label><input type="radio" name="c6" value="enquired"> enquired</label>
+<label><input type="radio" name="c6" value="challenged"> challenged</label>
+</div>
+</div>
+
+<div class="question" data-answer="apologised">
+<p>7. He _____ for being rude to his colleague.</p>
+<div class="options">
+<label><input type="radio" name="c7" value="apologised"> apologised</label>
+<label><input type="radio" name="c7" value="described"> described</label>
+<label><input type="radio" name="c7" value="encouraged"> encouraged</label>
+</div>
+</div>
+
+<div class="question" data-answer="entertained">
+<p>8. The magician _____ the children with funny tricks.</p>
+<div class="options">
+<label><input type="radio" name="c8" value="informed"> informed</label>
+<label><input type="radio" name="c8" value="entertained"> entertained</label>
+<label><input type="radio" name="c8" value="complained"> complained</label>
+</div>
+</div>
+
+<div class="question" data-answer="encouraged">
+<p>9. My parents _____ me to apply for the university.</p>
+<div class="options">
+<label><input type="radio" name="c9" value="encouraged"> encouraged</label>
+<label><input type="radio" name="c9" value="welcomed"> welcomed</label>
+<label><input type="radio" name="c9" value="thanked"> thanked</label>
+</div>
+</div>
+
+<div class="question" data-answer="welcomed">
+<p>10. The hotel receptionist _____ us with a friendly smile.</p>
+<div class="options">
+<label><input type="radio" name="c10" value="challenged"> challenged</label>
+<label><input type="radio" name="c10" value="welcomed"> welcomed</label>
+<label><input type="radio" name="c10" value="warned"> warned</label>
+</div>
+</div>
+
+</div>
+
+<button onclick="checkRadio('choose','score2')">Check answers</button>
+<button class="secondary" onclick="resetRadio('choose','score2')">Reset</button>
+<div class="score" id="score2">Your score: — / 10</div>
+</section>
+
+<!-- EXERCISE 3 -->
+
+<section class="exercise" id="task3">
+<h2>📝 Exercise 3. Complete the sentences</h2>
+<p>Use the verbs from the box. Put them into the correct form. Each verb is used once.</p>
+
+<p><strong>Word bank:</strong></p>
+<p>
+challenge · complain · describe · encourage · inform ·
+persuade · recommend · thank · entertain · tell a story
+</p>
+
+<div id="gaps">
+
+<div class="question" data-answer="thanked">
+<p>1. I _____ my teacher for helping me with the project.</p>
+<input type="text" placeholder="Your answer">
+</div>
+
+<div class="question" data-answer="described">
+<p>2. The witness _____ what happened during the accident.</p>
+<input type="text" placeholder="Your answer">
+</div>
+
+<div class="question" data-answer="encouraged">
+<p>3. My friends _____ me to take part in the competition.</p>
+<input type="text" placeholder="Your answer">
+</div>
+
+<div class="question" data-answer="complained">
+<p>4. The neighbours _____ about the loud music.</p>
+<input type="text" placeholder="Your answer">
+</div>
+
+<div class="question" data-answer="inform">
+<p>5. Please _____ me if there are any changes to the schedule.</p>
+<input type="text" placeholder="Your answer">
+</div>
+
+<div class="question" data-answer="challenged">
+<p>6. The journalist _____ the politician's opinion during the interview.</p>
+<input type="text" placeholder="Your answer">
+</div>
+
+<div class="question" data-answer="recommend">
+<p>7. I would _____ booking a table in advance.</p>
+<input type="text" placeholder="Your answer">
+</div>
+
+<div class="question" data-answer="persuaded">
+<p>8. She finally _____ her parents to let her travel alone.</p>
+<input type="text" placeholder="Your answer">
+</div>
+
+<div class="question" data-answer="entertained">
+<p>9. The performers _____ the audience throughout the evening.</p>
+<input type="text" placeholder="Your answer">
+</div>
+
+<div class="question" data-answer="told a story">
+<p>10. Grandpa _____ about his childhood every Sunday.</p>
+<input type="text" placeholder="Your answer">
+</div>
+
+</div>
+
+<button onclick="checkInputs('gaps','score3')">Check answers</button>
+<button class="secondary" onclick="resetInputs('gaps','score3')">Reset</button>
+<div class="score" id="score3">Your score: — / 10</div>
+</section>
+
+<!-- EXERCISE 4 -->
+
+<section class="exercise" id="task4">
+<h2>🔎 Exercise 4. Complete the word formation table</h2>
+<p>Write the correct noun or verb form.</p>
+
+<div id="wordformation">
+
+<div class="question" data-answer="apology">
+<p>1. apologise → noun</p>
+<input type="text" placeholder="Noun">
+</div>
+
+<div class="question" data-answer="complaint">
+<p>2. complain → noun</p>
+<input type="text" placeholder="Noun">
+</div>
+
+<div class="question" data-answer="description">
+<p>3. describe → noun</p>
+<input type="text" placeholder="Noun">
+</div>
+
+<div class="question" data-answer="encouragement">
+<p>4. encourage → noun</p>
+<input type="text" placeholder="Noun">
+</div>
+
+<div class="question" data-answer="information">
+<p>5. inform → noun</p>
+<input type="text" placeholder="Noun">
+</div>
+
+<div class="question" data-answer="recommendation">
+<p>6. recommend → noun</p>
+<input type="text" placeholder="Noun">
+</div>
+
+<div class="question" data-answer="warning">
+<p>7. warn → noun</p>
+<input type="text" placeholder="Noun">
+</div>
+
+<div class="question" data-answer="welcome">
+<p>8. welcome → noun</p>
+<input type="text" placeholder="Noun">
+</div>
+
+<div class="question" data-answer="persuasion">
+<p>9. persuade → noun</p>
+<input type="text" placeholder="Noun">
+</div>
+
+<div class="question" data-answer="entertainment">
+<p>10. entertain → noun</p>
+<input type="text" placeholder="Noun">
+</div>
+
+</div>
+
+<button onclick="checkInputs('wordformation','score4')">Check answers</button>
+<button class="secondary" onclick="resetInputs('wordformation','score4')">Reset</button>
+<div class="score" id="score4">Your score: — / 10</div>
+</section>
+
+<!-- EXERCISE 5 -->
+
+<section class="exercise" id="task5">
+<h2>🌸 Exercise 5. Translate into English</h2>
+<p>Translate the sentences. Use the communication verbs from this lesson.</p>
+
+<div id="translations">
+
+<div class="translation-item">
+<p>1. Она извинилась за опоздание.</p>
+<textarea placeholder="Write your translation..."></textarea>
+<button class="secondary" onclick="showAnswer(0)">Show answer</button>
+<div class="answer-key">
+She apologised for being late.
+</div>
+</div>
+
+<div class="translation-item">
+<p>2. Родители поддерживали меня и поощряли меня участвовать в конкурсе.</p>
+<textarea placeholder="Write your translation..."></textarea>
+<button class="secondary" onclick="showAnswer(1)">Show answer</button>
+<div class="answer-key">
+My parents encouraged me to take part in the competition.
+</div>
+</div>
+
+<div class="translation-item">
+<p>3. Он предупредил нас об опасности.</p>
+<textarea placeholder="Write your translation..."></textarea>
+<button class="secondary" onclick="showAnswer(2)">Show answer</button>
+<div class="answer-key">
+He warned us about the danger.
+</div>
+</div>
+
+<div class="translation-item">
+<p>4. Я хочу узнать о стоимости курса.</p>
+<textarea placeholder="Write your translation..."></textarea>
+<button class="secondary" onclick="showAnswer(3)">Show answer</button>
+<div class="answer-key">
+I want to enquire about the cost of the course.
+</div>
+</div>
+
+<div class="translation-item">
+<p>5. Она убедила меня попробовать это блюдо.</p>
+<textarea placeholder="Write your translation..."></textarea>
+<button class="secondary" onclick="showAnswer(4)">Show answer</button>
+<div class="answer-key">
+She persuaded me to try this dish.
+</div>
+</div>
+
+<div class="translation-item">
+<p>6. Ведущий развлекал гостей забавными историями.</p>
+<textarea placeholder="Write your translation..."></textarea>
+<button class="secondary" onclick="showAnswer(5)">Show answer</button>
+<div class="answer-key">
+The host entertained the guests with funny stories.
+</div>
+</div>
+
+<div class="translation-item">
+<p>7. Я рекомендую посетить этот музей.</p>
+<textarea placeholder="Write your translation..."></textarea>
+<button class="secondary" onclick="showAnswer(6)">Show answer</button>
+<div class="answer-key">
+I recommend visiting this museum.
+</div>
+</div>
+
+<div class="translation-item">
+<p>8. Он поблагодарил меня за помощь.</p>
+<textarea placeholder="Write your translation..."></textarea>
+<button class="secondary" onclick="showAnswer(7)">Show answer</button>
+<div class="answer-key">
+He thanked me for helping.
+</div>
+</div>
+
+</div>
+
+<button class="secondary" onclick="showAllAnswers()">Show all answers</button>
+<button class="secondary" onclick="hideAllAnswers()">Hide answers</button>
+</section>
+
+<section class="intro">
+<h2>🌿 Great work!</h2>
+<p>You've practised 15 communication verbs in different contexts.</p>
+<p><strong>Remember these useful patterns:</strong></p>
+<ul>
+<li>apologise for something / doing something</li>
+<li>complain about something</li>
+<li>encourage somebody to do something</li>
+<li>persuade somebody to do something</li>
+<li>recommend doing something</li>
+<li>thank somebody for something / doing something</li>
+<li>warn somebody about something</li>
+</ul>
+</section>
+
+</div>
+
+<footer>
+Communication Verbs · B1 English Practice
+</footer>
+
+<script>
+function normalize(text) {
+  return text.toLowerCase()
+    .replace(/[.,!?']/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function markQuestion(q, correct) {
+  q.classList.remove("correct", "incorrect");
+  q.classList.add(correct ? "correct" : "incorrect");
+
+  let feedback = q.querySelector(".feedback");
+  if (!feedback) {
+    feedback = document.createElement("div");
+    feedback.className = "feedback";
+    q.appendChild(feedback);
+  }
+  feedback.textContent = correct ? "✓ Correct!" : "✗ Try again.";
+}
+
+function checkSelects(id, scoreId) {
+  const questions = document.querySelectorAll(`#${id} .question`);
+  let score = 0;
+
+  questions.forEach(q => {
+    const input = q.querySelector("select");
+    const correct = normalize(input.value) === normalize(q.dataset.answer);
+    if (correct) score++;
+    markQuestion(q, correct);
+  });
+
+  document.getElementById(scoreId).textContent =
+    `Your score: ${score} / ${questions.length}`;
+}
+
+function resetSelects(id, scoreId) {
+  const block = document.getElementById(id);
+  block.querySelectorAll("select").forEach(s => s.value = "");
+  clearBlock(id, scoreId);
+}
+
+function checkRadio(id, scoreId) {
+  const questions = document.querySelectorAll(`#${id} .question`);
+  let score = 0;
+
+  questions.forEach(q => {
+    const selected = q.querySelector("input:checked");
+    const correct = selected &&
+      normalize(selected.value) === normalize(q.dataset.answer);
+    if (correct) score++;
+    markQuestion(q, !!correct);
+  });
+
+  document.getElementById(scoreId).textContent =
+    `Your score: ${score} / ${questions.length}`;
+}
+
+function resetRadio(id, scoreId) {
+  document.querySelectorAll(`#${id} input[type=radio]`)
+    .forEach(i => i.checked = false);
+  clearBlock(id, scoreId);
+}
+
+function checkInputs(id, scoreId) {
+  const questions = document.querySelectorAll(`#${id} .question`);
+  let score = 0;
+
+  questions.forEach(q => {
+    const input = q.querySelector("input");
+    const correct = normalize(input.value) === normalize(q.dataset.answer);
+    if (correct) score++;
+    markQuestion(q, correct);
+  });
+
+  document.getElementById(scoreId).textContent =
+    `Your score: ${score} / ${questions.length}`;
+}
+
+function resetInputs(id, scoreId) {
+  document.querySelectorAll(`#${id} input`)
+    .forEach(i => i.value = "");
+  clearBlock(id, scoreId);
+}
+
+function clearBlock(id, scoreId) {
+  document.querySelectorAll(`#${id} .question`).forEach(q => {
+    q.classList.remove("correct", "incorrect");
+    const feedback = q.querySelector(".feedback");
+    if (feedback) feedback.remove();
+  });
+
+  document.getElementById(scoreId).textContent = "Your score: —";
+}
+
+function showAnswer(index) {
+  document.querySelectorAll(".answer-key")[index].style.display = "block";
+}
+
+function showAllAnswers() {
+  document.querySelectorAll(".answer-key")
+    .forEach(a => a.style.display = "block");
+}
+
+function hideAllAnswers() {
+  document.querySelectorAll(".answer-key")
+    .forEach(a => a.style.display = "none");
+}
+</script>
+
+</body>
+</html>
